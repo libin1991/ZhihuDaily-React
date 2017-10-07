@@ -5,13 +5,11 @@ const app = new Koa();
 const basrUrl = "http://news-at.zhihu.com";
 
 app.use(cors());
-
 const main = async (ctx, next) => {
     const pathname = ctx.request.path;
     ctx.response.type = 'json';
     ctx.response.body = JSON.parse(await rp(basrUrl + pathname));
 };
-
 app.use(main);
 
 app.listen(9999);
