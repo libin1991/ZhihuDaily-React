@@ -20,7 +20,7 @@ class Latest extends Component {
     }
 
     componentDidMount() {
-        const LATEST_URL = 'http://localhost:9999/api/4/news/latest';
+        const LATEST_URL = 'http://112.74.202.2:9999/api/4/news/latest';
         if (sessionStorage.getItem('mb_latest')) { // 如果本地保存了数据状态 直接从本地获取
             const topStories = JSON.parse(sessionStorage.getItem(('topStories')));
             const storiesQue = JSON.parse(sessionStorage.getItem(('storiesQue')));
@@ -75,7 +75,7 @@ class Latest extends Component {
         Latest.scrollPoint = scrollTop;// 全局的
         if (isBottom) {// 到达底部 fetch 前一天数据 并记录scrollHeight（滚动点）
             const date4Fetch = this.state.date4FetchQue[this.state.date4FetchQue.length - 1];
-            this.fetchNews('http://localhost:9999/api/4/news/before/' + date4Fetch, 'before', scrollHeight);
+            this.fetchNews('http://112.74.202.2:9999/api/4/news/before/' + date4Fetch, 'before', scrollHeight);
         }
         // 根据滚动点判断标题显示内容
         this.changeTitle(scrollTop);

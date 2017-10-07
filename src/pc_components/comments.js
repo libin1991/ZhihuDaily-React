@@ -20,7 +20,7 @@ class NewsComment extends Component {
 
     componentDidMount() {
         const {id} = this.props;
-        fetch(`http://localhost:9999/api/4/story/${id}/short-comments`) // 获取短评论
+        fetch(`http://112.74.202.2:9999/api/4/story/${id}/short-comments`) // 获取短评论
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));
@@ -29,7 +29,7 @@ class NewsComment extends Component {
                 }));
             });
 
-        fetch(`http://localhost:9999/api/4/story/${id}/long-comments`) // 获取长评论
+        fetch(`http://112.74.202.2:9999/api/4/story/${id}/long-comments`) // 获取长评论
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));

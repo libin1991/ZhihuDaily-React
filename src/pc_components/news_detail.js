@@ -16,7 +16,7 @@ class PCNewsDetail extends Component {
 
     componentDidMount() {
         let path = this.props.match ? this.props.match.url : this.props.path; // PC端作为路由组件传递路由信息 移动端作为普通组件传递参数
-        fetch('http://localhost:9999/api/4' + path) // 获取正文
+        fetch('http://112.74.202.2:9999/api/4' + path) // 获取正文
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));

@@ -20,7 +20,7 @@ class Topics extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:9999/api/4/themes')
+        fetch('http://112.74.202.2:9999/api/4/themes')
             .then((response) => response.json())
             .then((data) => {
                 this.setState((preState) => ({

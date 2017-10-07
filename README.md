@@ -1,10 +1,29 @@
 # 新手向-用react做一个知乎日报
 
-API：[点这里](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90)
+API：[点这里，感谢](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90)
 
 项目地址：[狂戳这里给我star](https://github.com/hackerwen/ZhihuDaily-React)
 
 预览地址：[狂戳这里去感受]()
+
+![pc主页.png](http://upload-images.jianshu.io/upload_images/4869616-3b51087880a11b46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![pc内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-a6f80faefe83f662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![移动端主页.png](http://upload-images.jianshu.io/upload_images/4869616-c2c3936b26b04ee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![抽屉导航.png](http://upload-images.jianshu.io/upload_images/4869616-fcc59e2fdf220979.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-43eee459a22ebfeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![电影日报.png](http://upload-images.jianshu.io/upload_images/4869616-10b1b91dbd2ae7c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![评论.png](http://upload-images.jianshu.io/upload_images/4869616-87f61cb4c2c1f22d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 
 ## 依赖
 
@@ -230,12 +249,25 @@ z-index层级：Drawer>mask>index
 >参考
 >* [web移动端浮层滚动阻止window窗体滚动JS/CSS处理](http://www.zhangxinxu.com/wordpress/2016/12/web-mobile-scroll-prevent-window-js-css/)                         
 
-后续操作：完善细节
+### 关于组件复用
+因为最开始做的是PC端，antd真的很好看，后面做移动端，发现有一些模块是可以复用的，当然，这不正是模块化开发的强大之处吗？
+
+比如news-detail以及comments，我是将能复用的组件通过判断props的参数改变结构，但是完全可以将不变的结构提取出来，PC端移动端分别引用二次封装就好了，所以感觉这一块还需要进步。
+
+后续操作：完善细节，自己写折叠面板。
 
 ##后话
 如果我的文章给您了一点帮助，希望可以去github上给我一颗star。
 
 能够在国庆短短几天从不知道react是啥到做个小东西出来，一直都是因为有这么多热爱分享的人，站在巨人的肩膀上！
 
-项目地址：[狂戳这里给我star](https://github.com/hackerwen/ZhihuDaily-React)
+项目地址：[狂戳这里](https://github.com/hackerwen/ZhihuDaily-React)
 ⭐⭐⭐
+
+我的其他项目：
+
+[Github: ⭐vue全家桶:高仿网易云音乐播放器 PC端](https://github.com/hackerwen/Netease-Music-of-Vue)
+
+[Github: ⭐vue + express + mongodb 打造个人博客](https://github.com/hackerwen/vue-blog)
+
+我的博客：[点这里](http://blog.hackerwen.tech/archives/)

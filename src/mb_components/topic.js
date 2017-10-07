@@ -24,7 +24,7 @@ class Latest extends Component {
     }
 
     fetchTheme(id) {
-        fetch(`http://localhost:9999/api/4/theme/${id}`)
+        fetch(`http://112.74.202.2:9999/api/4/theme/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));

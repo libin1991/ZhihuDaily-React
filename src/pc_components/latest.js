@@ -28,7 +28,7 @@ class Latest extends Component {
             });
             return;
         }
-        fetch('http://localhost:9999/api/4/news/latest')
+        fetch('http://112.74.202.2:9999/api/4/news/latest')
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));
@@ -43,7 +43,7 @@ class Latest extends Component {
     }
 
     fetchNews = (date) => {
-        fetch('http://localhost:9999/api/4/news/before/' + date)
+        fetch('http://112.74.202.2:9999/api/4/news/before/' + date)
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data)));
