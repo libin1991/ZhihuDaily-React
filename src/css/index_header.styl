@@ -1,0 +1,33 @@
+@import './mixin.styl';
+html.noscroll,
+.noscroll body {
+  overflow: hidden;
+}
+
+.noscroll body {
+  position: relative;
+}
+
+.index-header
+  mx_poftl(0, 0);
+  z-index: 8888;
+  width: 100%;
+  px2rem('height', 100);
+  px2rem('font-size', $headerFont);
+  background-color: $huBlue;
+  color: #fff;
+  & > *
+    px2rem('line-height', 100);
+  .menu,.title
+    px2rem('margin-left', 15);
+  .more
+    f_r();
+    &.hide
+      display: none;
+    & > i
+      px2rem('margin-right',50);
+  .mask
+    mx_postl(0, 0);
+    z-index: 9999;
+    mx_wh(100vh, 100vh);
+    background-color: rgba(7, 17, 27, 0.8);

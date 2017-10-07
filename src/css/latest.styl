@@ -1,0 +1,21 @@
+@import './mixin.styl';
+
+.latest
+  width: 100%;
+  px2rem('height',1500);
+  overflow-y:scroll;
+  .carousel
+    px2rem('margin-top', 100);
+    px2rem('height', 460);
+    .car-img
+      background-repeat: no-repeat;
+      px2rem('height', 460);
+      position: relative;
+      .car-img-title
+        width:100%;
+        mx_posbl_r(20, 0);
+        mx_fc(40, #fff);
+        padding: 10px;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.2);
+

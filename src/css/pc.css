@@ -1,0 +1,51 @@
+#pc header .logo {
+    display: flex;
+    align-items: center;
+}
+
+#pc header .logo img {
+    width: 48px;
+    height: 48px;
+}
+
+#pc header .logo span {
+    font-size: 24px;
+}
+
+#pc header .about {
+    float: right;
+}
+
+#pc footer {
+    text-align: center;
+}
+#pc .container {
+    padding-top: 20px;
+    min-height: 60vh;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+.ant-card {
+    margin-bottom: 10px;
+}
+
+.custom-image img {
+    display: block;
+}
+
+.custom-card {
+    padding: 10px 16px;
+    height: 100px;
+    position: relative;
+}
+
+.custom-card p {
+    color: #999;
+    position: absolute;
+    bottom:2px;
+}
+
+.headline .img-place-holder{
+    height: 10px !important;
+}
+

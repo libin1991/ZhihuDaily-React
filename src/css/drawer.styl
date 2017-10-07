@@ -1,0 +1,49 @@
+@import './mixin.styl';
+.drawer
+  mx_postl(0, -100%);
+  mx_wh(75%, 100vh);
+  mx_flex();
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 99999;
+  transition: all 0.5s ease;
+  &.show
+    mx_postl(0, 0);
+    tranform: translateZ(0);
+    .drawer-header
+      px2rem('padding', 20);
+      px2rem('height', 200);
+      background-color: $huBlue;
+      .user
+        mx_hlh(80, 80);
+        px2rem('font-size', 36);
+        position: relative;
+        .nickName
+          position: absolute;
+          px2rem('left', 140);
+          px2rem('top', 0);
+      .setting
+        mx_flex();
+        px2rem('font-size', 28);
+        & > p
+          text-align: center;
+          mx_flex_item(1);
+          & > span
+            margin-left: 15px;
+    .drawer-body
+      mx_flex_item(1);
+      px2rem('padding', 15);
+      background-color: $huWhite;
+      & > p
+        mx_hlh(100, 100);
+        font-weight: bold;
+        & > a
+          display:block;
+          mx_fc(30, $fontWhite);
+          &.selected
+            color: $huBlue;
+          & > i:not(.anticon-home)
+            f_r();
+            mx_hlh(100, 100);
+            px2rem('margin-right', 30);

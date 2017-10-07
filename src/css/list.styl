@@ -1,0 +1,32 @@
+@import './mixin.styl';
+
+.list
+  font-family: Source Sans Pro, Helvetica, sans-serif !important;
+  padding: 10px;
+  background-color: $huWhite
+  .list-title
+    color: $fontWhite;
+    px2rem('margin-bottom', 25);
+    px2rem('font-size', 24);
+    font-weight: 500;
+  .list-block
+    mx_flex();
+    flex-direction: column;
+    .list-item
+      mx_flex();
+      px2rem('min-height', 80);
+      px2rem('padding', 20);
+      px2rem('margin-bottom', 40);
+      mx_bdrs_r(10);
+      -moz-box-shadow: 3px 2px 17px #aaa;
+      -webkit-box-shadow: 3px 2px 17px #aaa;
+      box-shadow: 3px 2px 17px #aaa;
+      background-color: #fff;
+    .story-title
+      mx_flex_item(1);
+      mx_fc(36,$fontWhite);
+      font-weight:500;
+    .story-thum
+      mx_wh_r(150, 140);
+      & > img
+        mx_wh(100%, 100%);

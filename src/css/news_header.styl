@@ -1,0 +1,18 @@
+@import './mixin.styl';
+
+.news-header
+  mx_poftl(0, 0);
+  z-index:8888;
+  width:100%;
+  px2rem('padding-left', 30);
+  px2rem('height', 100);
+  px2rem('font-size', $headerFont);
+  background-color: $huBlue;
+  color: #fff;
+  &>*
+    px2rem('line-height', 100);
+    .comments
+      color: #fff;
+  & > *:not(:first-child)
+    f_r();
+    px2rem('margin-right',50);

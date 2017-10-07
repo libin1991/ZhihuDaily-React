@@ -1,0 +1,45 @@
+@import './mixin.styl';
+.comments
+  font-family: Source Sans Pro, Helvetica, sans-serif !important;
+  .comments-header
+    mx_poftl(0, 0);
+    z-index: 8888;
+    width: 100%;
+    px2rem('padding-left', 30);
+    px2rem('height', 100);
+    px2rem('font-size', $headerFont);
+    background-color: $huBlue;
+    color: #fff;
+    .length
+      px2rem('margin-left', 15);
+    & > *
+      px2rem('line-height', 100);
+    & > *:last-child
+      f_r();
+      px2rem('margin-right', 50);
+  .Collapse
+    px2rem('margin-top', 100);
+    mx_fc(32, $fontWhite) !important;
+    .comment-box
+      border-bottom: 1px solid rgba(7, 17, 27, 0.2);
+      &:last-child
+        border:none;
+      px2rem('margin-top', 10);
+      .comment-user
+        mx_flex();
+        align-items:center;
+        mx_hlh(80,80);
+        .like
+          f_r();
+          px2rem('margin-right',20);
+        .username
+          mx_flex_item(1);
+      .comment-reply
+        background-color: $huWhite;
+        px2rem('margin-top', 10);
+        px2rem('min-height', 20);
+        px2rem('padding', 10);
+      .comment-content
+        px2rem('margin', 10);
+      .comment-time
+        mx_fc(24, rgba(7, 17, 27, 0.2));

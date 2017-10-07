@@ -1,0 +1,25 @@
+@import './mixin.styl';
+
+.topic_block
+  px2rem('padding-top', 100);
+  width: 100%;
+  background-color: $huWhite
+  overflow: hidden;
+  .topic-pic
+    px2rem('height', 450);
+    position: relative;
+    .topic-title
+      mx_posbl_r(10, 0);
+      mx_fc(40, #fff);
+      width: 100%;
+      padding: 10px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.2);
+  .editors
+    px2rem('margin-top', 20);
+    px2rem('font-size', 28);
+    mx_hlh(80,80);
+    px2rem('padding-left', 32);
+    & > span
+      vertical-align: top;
+      px2rem('margin-right',20);
