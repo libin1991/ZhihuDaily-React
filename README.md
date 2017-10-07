@@ -254,6 +254,17 @@ z-index层级：Drawer>mask>index
 
 比如news-detail以及comments，我是将能复用的组件通过判断props的参数改变结构，但是完全可以将不变的结构提取出来，PC端移动端分别引用二次封装就好了，所以感觉这一块还需要进步。
 
+### 关于打包
+记得要将开发时对webpack.config.dev.js做的操作也要对webpack.config.prod.js操作一遍。
+
+比如我开发时引入了stylus，自己也配置了webpack.config.dev.js的环境[stylus, stylus-loader ],在开发环境下没有问题。
+
+但是打包之后stylus文件全部失效，一看好好的躺在static/media文件夹呢，说明生产环境的webpack没有配置好。再对webpack.config.prod.js里面的loaders也添加一遍就好了，其它同理。
+然后：
+```bash
+npm run build 
+```
+
 后续操作：完善细节，自己写折叠面板。
 
 ##后话
