@@ -4,7 +4,7 @@ API：[点这里，感谢](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E
 
 项目地址：[狂戳这里给我star](https://github.com/hackerwen/ZhihuDaily-React)
 
-预览地址：[狂戳这里去感受]()
+预览地址：[狂戳这里去感受](http://112.74.202.2/)
 
 ![pc主页.png](http://upload-images.jianshu.io/upload_images/4869616-3b51087880a11b46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -254,7 +254,7 @@ z-index层级：Drawer>mask>index
 
 比如news-detail以及comments，我是将能复用的组件通过判断props的参数改变结构，但是完全可以将不变的结构提取出来，PC端移动端分别引用二次封装就好了，所以感觉这一块还需要进步。
 
-### 关于打包
+### 关于打包(未解决)
 记得要将开发时对webpack.config.dev.js做的操作也要对webpack.config.prod.js操作一遍。
 
 比如我开发时引入了stylus，自己也配置了webpack.config.dev.js的环境[stylus, stylus-loader ],在开发环境下没有问题。
@@ -264,6 +264,28 @@ z-index层级：Drawer>mask>index
 ```bash
 npm run build 
 ```
+如何在github-page上展示呢？
+
+[戳这里](https://segmentfault.com/a/1190000008425992)，虽然说的是vue项目，但是build后操作一模一样，除了将命令中dist=>build
+
+上传后会发现只有在github根路径才能正常访问，而不是仓库下面的路径，很坑啊。。。不是很懂这个原因啊，恳请高手替我解答一下，资源路径没问题，就是路由匹配不正确。
+
+理想情况下应该是这个路径可以直接访问
+```js
+https://nickname.github.io/project/[index.html]
+```
+
+但是这个gh-pages的的路径进去是一个header（PC端），路由'/'的组件没有渲染出来，点了以下header的首页'/topics'的链接，一切恢复正常，但是url却变成了下面这个：
+```js
+https://nickname.github.io/topics
+```
+项目路径被吃了，这个路径直接访问又是404，难道react-router写path的时候只能相对于域名根路径？
+
+我看别人都是打包后资源加载问题，我发现直接打包资源路径没有问题，难道我开发时要把path由'/a'改为'/project/a'???
+
+> 参考
+> * [stackoverflow](https://segmentfault.com/q/1010000009672497)
+> * [如何在gh-pages上展示vue项目](https://segmentfault.com/a/1190000008425992)
 
 后续操作：完善细节，自己写折叠面板。
 
