@@ -60,56 +60,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="news_detail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/mobile/news_detail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topic.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/mobile/topic.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="latest_news.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/mobile/latest_news.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news_detail.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/mobile/news_detail.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topic.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/mobile/topic.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="382">
+                <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+                <folding>
+                  <marker date="1507466097865" expanded="true" signature="1348:1488" ph="{...}" />
+                  <marker date="1507466097865" expanded="true" signature="1916:2000" ph="{...}" />
+                  <marker date="1507466097865" expanded="true" signature="4581:4611" ph="{...}" />
+                  <marker date="1507466097865" expanded="true" signature="4865:5140" ph="&lt;Router/&gt;" />
+                  <marker date="1507466097865" expanded="true" signature="4882:5126" ph="&lt;div/&gt;" />
+                  <marker date="1507466097865" expanded="true" signature="4900:4999" ph="&lt;MediaQuery/&gt;" />
+                  <marker date="1507466097865" expanded="true" signature="5012:5111" ph="&lt;MediaQuery/&gt;" />
+                  <marker date="1507466097865" expanded="true" signature="5758:5796" ph="{...}" />
+                  <marker date="1507466097865" expanded="true" signature="5818:5846" ph="{...}" />
+                  <marker date="1507466097865" expanded="true" signature="5875:5896" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -154,7 +124,6 @@
         <option value="$PROJECT_DIR$/src/pc_components/header.js" />
         <option value="$PROJECT_DIR$/src/mb_components/latest.js" />
         <option value="$PROJECT_DIR$/src/css/latest.styl" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/css/pc_news_detail.styl" />
         <option value="$PROJECT_DIR$/src/components/comment.js" />
         <option value="$PROJECT_DIR$/src/css/comments.styl" />
@@ -174,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/css/topic.styl" />
         <option value="$PROJECT_DIR$/src/components/mobile/latest.styl" />
         <option value="$PROJECT_DIR$/src/components/mobile/news_detail.styl" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -282,20 +252,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="zhihudaily-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihudaily-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="mobile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhihudaily-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihudaily-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pc" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -355,15 +311,16 @@
       <updated>1507363769665</updated>
       <workItem from="1507363771118" duration="11932000" />
       <workItem from="1507378551881" duration="5375000" />
-      <workItem from="1507428474545" duration="10485000" />
+      <workItem from="1507428474545" duration="11010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27792000" />
+    <option name="totallyTimeSpent" value="28317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17769517" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -373,7 +330,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -411,16 +368,16 @@
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding>
-              <marker date="1507432002333" expanded="true" signature="1348:1488" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="1916:2000" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="4581:4611" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="4865:5140" ph="&lt;Router/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="4882:5126" ph="&lt;div/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="4900:4999" ph="&lt;MediaQuery/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="5012:5111" ph="&lt;MediaQuery/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="5758:5796" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="5818:5846" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="5875:5896" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="1348:1488" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="1916:2000" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="4581:4611" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="4865:5140" ph="&lt;Router/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="4882:5126" ph="&lt;div/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="4900:4999" ph="&lt;MediaQuery/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="5012:5111" ph="&lt;MediaQuery/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="5758:5796" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="5818:5846" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="5875:5896" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -705,28 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="142">
-            <caret line="283" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-            <folding>
-              <marker date="1507432002333" expanded="true" signature="1348:1488" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="1916:2000" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="4581:4611" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="4865:5140" ph="&lt;Router/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="4882:5126" ph="&lt;div/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="4900:4999" ph="&lt;MediaQuery/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="5012:5111" ph="&lt;MediaQuery/&gt;" />
-              <marker date="1507432002333" expanded="true" signature="5758:5796" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="5818:5846" ph="{...}" />
-              <marker date="1507432002333" expanded="true" signature="5875:5896" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/comment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -811,11 +746,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/mobile/topic.styl">
+    <entry file="file://$PROJECT_DIR$/src/components/mobile/news_detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="528">
+          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -845,13 +782,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/mobile/news_detail.js">
+    <entry file="file://$PROJECT_DIR$/src/components/mobile/topic.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="96">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="382">
+            <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+            <folding>
+              <marker date="1507466097865" expanded="true" signature="1348:1488" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="1916:2000" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="4581:4611" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="4865:5140" ph="&lt;Router/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="4882:5126" ph="&lt;div/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="4900:4999" ph="&lt;MediaQuery/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="5012:5111" ph="&lt;MediaQuery/&gt;" />
+              <marker date="1507466097865" expanded="true" signature="5758:5796" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="5818:5846" ph="{...}" />
+              <marker date="1507466097865" expanded="true" signature="5875:5896" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -235,9 +235,15 @@ z-index层级：Drawer>mask>index
 >* [web移动端浮层滚动阻止window窗体滚动JS/CSS处理](http://www.zhangxinxu.com/wordpress/2016/12/web-mobile-scroll-prevent-window-js-css/)                         
 
 ### 关于组件复用
-因为最开始做的是PC端，antd真的很好看，后面做移动端，发现有一些模块是可以复用的，当然，这不正是模块化开发的强大之处吗？
+移动端以及PC端的news_detail/comments均是基于公共的模块news_content/comments_content/comment/avatar进行二次包装。
 
-比如news-detail以及comments，我是将能复用的组件通过判断props的参数改变结构，但是完全可以将不变的结构提取出来，PC端移动端分别引用二次封装就好了，所以感觉这一块还需要进步。
+以内容详情页news_detail举例。
+
+PC端内容详情页news_detail这一模块中包含评论comments模块，而移动端包含一个news_header头部模块。
+
+所以采取对共有模块news_content进行引用，同时PC端引用comments模块进行组合，移动端引用news_header模块进行组合，在各自的news_detail里进行数据的获取，共有模块只负责展示，属于stateless组件。
+
+这样一来，即使完全删除PC文件或者移动端文件，剩下的一方依然可以正常使用，二者之间不存在相互关联引用。
 
 ### 关于打包(未解决)
 记得要将开发时对webpack.config.dev.js做的操作也要对webpack.config.prod.js操作一遍。
