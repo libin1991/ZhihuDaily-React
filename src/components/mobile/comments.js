@@ -1,5 +1,5 @@
 import React from 'react';
-import PCComments from '../pc_components/comments';
+import PCComments from '../comments';
 
 const Comments = (props) => {
     const id = props.match.params.id;

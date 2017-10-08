@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 import {Row, Col} from 'antd';
-import PCHeader from '../pc_components/header';
-import PCFooter from '../pc_components/footer';
-import Latest from '../pc_components/latest';
-import Topics from '../pc_components/topics';
-import NewsDetail from '../pc_components/news_detail';
+import PCHeader from '../components/pc/header';
+import PCFooter from '../components/pc/footer';
+import Latest from '../components/pc/latest_news';
+import Topics from '../components/pc/topics';
+import NewsDetail from '../components/news_detail';
 
 import '../css/pc.css'
 class PCIndex extends Component {

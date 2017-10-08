@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import NewsComment from './comments';
-import Avatar from '../mb_components/avatar'
+import Avatar from './avatar'
 import {replaceUrl} from '../js/util';
 import {BackTop} from 'antd';
 

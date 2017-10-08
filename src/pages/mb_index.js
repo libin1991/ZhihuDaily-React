@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Latest from '../mb_components/latest';
-import Topic from '../mb_components/topic';
-import NewsDetail from '../mb_components/news_detail';
-import Comments from '../mb_components/comments';
+import Latest from '../components/mobile/latest_news';
+import Topic from '../components/mobile/topic';
+import NewsDetail from '../components/mobile/news_detail';
+import Comments from '../components/mobile/comments';
 
 
 class MBIndex extends Component {

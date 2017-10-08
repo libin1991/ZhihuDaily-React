@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Carousel} from 'antd';
-import IndexHeader from '../mb_components/index_header';
-import {replaceUrl, formatDate} from "../js/util";
-import '../css/latest.styl'
+import IndexHeader from './/index_header';
+import {replaceUrl, formatDate} from "../../js/util";
+import '../../css/latest.styl'
 import List from './list';
 
 class Latest extends Component {

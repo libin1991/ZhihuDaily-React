@@ -43,7 +43,7 @@ class Header extends Component {
                     <Col span={2}/>
                     <Col span={4}>
                         <a href="/" className="logo">
-                            <img src={require('../images/icon_zhihu.png')} alt="logo"/>
+                            <img src={require('../../images/icon_zhihu.png')} alt="logo"/>
                             <span>ZhihuDaily</span>
                         </a>
                     </Col>

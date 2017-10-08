@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Avatar from './avatar';
-import IndexHeader from '../mb_components/index_header';
-import {replaceUrl} from "../js/util";
+import Avatar from '../avatar';
+import IndexHeader from './/index_header';
+import {replaceUrl} from "../../js/util";
 import List from './list';
-import '../css/topic.styl'
+import '../../css/topic.styl'
 
 class Latest extends Component {
     constructor() {

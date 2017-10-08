@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import NewsHeader from './news_header';
-import LowDetail from '../pc_components/news_detail'
-import {replaceUrl} from '../js/util';
-import '../css/news_detail.styl';
+import LowDetail from '../news_detail'
+import {replaceUrl} from '../../js/util';
+import '../../css/news_detail.styl';
 class NewsDetail extends Component {
     constructor() {
         super();

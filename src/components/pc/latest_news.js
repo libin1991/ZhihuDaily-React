@@ -3,7 +3,7 @@ import {Tabs, Button, message} from 'antd';
 import 'whatwg-fetch';
 import NewsBlock from './news_block'; // 展示组件|函数定义组建|无状态组件
 
-import {replaceUrl, formatDate} from '../js/util'; // 知乎图片防盗链解决方法
+import {replaceUrl, formatDate} from '../../js/util'; // 知乎图片防盗链解决方法
 
 const TabPane = Tabs.TabPane;
 

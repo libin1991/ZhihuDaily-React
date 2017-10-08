@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Row, Col, Avatar} from 'antd';
-import {replaceUrl} from '../js/util'; // 知乎图片防盗链解决方法
+import {replaceUrl} from '../../js/util'; // 知乎图片防盗链解决方法
 import PCNewsBlock from './news_block'; // 展示组件|函数定义组建|无状态组件
 
 class TopicBlock extends Component {

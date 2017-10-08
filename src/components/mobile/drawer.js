@@ -1,8 +1,8 @@
 import React from 'react';
 import {Icon} from 'antd';
-import Avatar from './avatar';
+import Avatar from '../avatar';
 import {NavLink} from 'react-router-dom';
-import '../css/drawer.styl'
+import '../../css/drawer.styl'
 
 const Drawer = (props) => {
     let {isShow, themes, toggleDrawer} = props;

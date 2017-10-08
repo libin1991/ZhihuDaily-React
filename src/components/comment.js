@@ -1,6 +1,6 @@
 import React from 'react';
 import {Icon} from 'antd';
-import Avatar from '../mb_components/avatar';
+import Avatar from './avatar';
 import {formatTimeStamp} from "../js/util";
 
 const Comment = (props) => {

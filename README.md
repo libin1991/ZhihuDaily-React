@@ -8,18 +8,9 @@ API：[点这里，感谢](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E
 
 ![pc主页.png](http://upload-images.jianshu.io/upload_images/4869616-3b51087880a11b46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![pc内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-a6f80faefe83f662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
 ![移动端主页.png](http://upload-images.jianshu.io/upload_images/4869616-c2c3936b26b04ee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![抽屉导航.png](http://upload-images.jianshu.io/upload_images/4869616-fcc59e2fdf220979.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
 ![内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-43eee459a22ebfeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![电影日报.png](http://upload-images.jianshu.io/upload_images/4869616-10b1b91dbd2ae7c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 ![评论.png](http://upload-images.jianshu.io/upload_images/4869616-87f61cb4c2c1f22d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -88,8 +79,6 @@ data中的图片就可以正常引用了。
 #### 1.React Router为何在url相同参数不同的情况下跳转但是并不刷新页面？
 案情描述：当我从“日常心理学”主题日报跳转至“用户推荐日报”时，组件内部数据没有刷新，仍然为“日常心理学”的数据，而非“用户推荐日报”数据。
 
-案件发生地点：src/mb_components/topic.js
-
 路由一：/topic/abc
 
 路由二：/topic/efg
@@ -113,8 +102,6 @@ data中的图片就可以正常引用了。
 2. 把下拉加载更改为翻页，假设不是通过改变URL，只是单纯的ajax请求，击列表项到详细页，当点击返回按钮时，返回离开时的那一页。
 
 其实我之前也写过篇文章，[戳这里](http://www.jianshu.com/p/869e5c2e45cb)
-
-案件发生地点：src/mb_components/latest.js与src/pc_components/latest.js
 
 
 某一天我很无聊，正在刷知乎日报，我要完成一个目标：从2017-10-07号一直看到2017-01-01。
@@ -144,8 +131,6 @@ data中的图片就可以正常引用了。
 >* [React 和react-router ,实现回退的时候，如何使页面回退到以前的状态](http://react-china.org/t/react-react-router/3757/2)
 #### 3.后退时记录滚动条位置
 案情描述：同上
-
-案件发生地点：src/mb_components/latest.js
 
 恢复数据还不够，只是省下了我加载的时间，而我还是要拉到最底部，所以滚动条的位置也需要恢复。
 
