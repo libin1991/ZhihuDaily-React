@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Icon,message} from 'antd';
+import PropTypes from 'prop-types';
+import {Icon, message} from 'antd';
 import Drawer from './drawer';
 import './index_header.styl'
 
@@ -45,13 +46,30 @@ class IndexHeader extends Component {
             <header className="index-header">
                 <Icon className="menu" onClick={this.toggleDrawer} type="bars"/>
                 <span className="title">{title}</span>
-                {isIndex && <div className="more" onClick={()=>{message.info('开发中')}}><Icon type="bell"/><Icon type="ellipsis"/></div>}
-                <Drawer isShow={showDrawer} themes={themes} toggleDrawer={this.toggleDrawer}/>
+                {
+                    isIndex &&
+                    <div className="more" onClick={() => {
+                        message.info('开发中')
+                    }}>
+                        <Icon type="bell"/>
+                        <Icon type="ellipsis"/>
+                    </div>
+                }
+                {themes.length && <Drawer isShow={showDrawer} themes={themes} toggleDrawer={this.toggleDrawer}/>}
                 {showDrawer && <div className={"mask"} onClick={this.toggleDrawer}/>}
             </header>
         )
     }
 }
+
+IndexHeader.defaultProps = {
+    title: '首页',
+    isIndex:true
+};
+IndexHeader.propTypes = {
+    title: PropTypes.string.isRequired,
+    isIndex:PropTypes.bool
+};
 
 export default IndexHeader;
 

@@ -6,7 +6,7 @@ import {replaceUrl, formatDate} from "../../js/util";
 import './latest_news.styl'
 import List from './list';
 
-class Latest extends Component {
+class LatestNews extends Component {
     constructor() {
         super();
         this.state = {
@@ -22,16 +22,7 @@ class Latest extends Component {
     componentDidMount() {
         const LATEST_URL = 'http://112.74.202.2:9999/api/4/news/latest';
         if (sessionStorage.getItem('mb_latest')) { // 如果本地保存了数据状态 直接从本地获取
-            Latest.scrollPoint = JSON.parse(sessionStorage.getItem('scrollPoint'));
-            // this.setState({
-            //     topStories:JSON.parse(sessionStorage.getItem('topStories')),
-            //     storiesQue:JSON.parse(sessionStorage.getItem('storiesQue')),
-            //     date4FetchQue:JSON.parse(sessionStorage.getItem('date4FetchQue')),
-            //     formattedDateQue:JSON.parse(sessionStorage.getItem('formattedDateQue')),
-            //     scrollTitles:JSON.parse(sessionStorage.getItem('scrollTitles'))
-            // }, () => {
-            //     this.contentNode.scrollTop = Latest.scrollPoint;
-            // }); // 回调 保证数据读取成功再滚动容器 简化如下
+            LatestNews.scrollPoint = JSON.parse(sessionStorage.getItem('scrollPoint'));
             this.setState((preState) => {
                 const obj = {};
                 for (let k in preState) {
@@ -39,7 +30,7 @@ class Latest extends Component {
                 }
                 return obj;
             }, () => {
-                this.contentNode.scrollTop = Latest.scrollPoint;
+                this.contentNode.scrollTop = LatestNews.scrollPoint;
             });// 回调 保证数据读取成功再滚动容器
         } else { // 如果本地没有保存状态直接从服务器拉取
             this.fetchNews(LATEST_URL, 'latest');
@@ -62,8 +53,8 @@ class Latest extends Component {
         for (let k in this.state) { // 存储数据，保存状态
             sessionStorage.setItem(k, JSON.stringify(this.state[k]));
         }
-        if (Latest.scrollPoint) { // 存储鼠标当前滚动条的位置
-            sessionStorage.setItem('scrollPoint', Latest.scrollPoint.toString());
+        if (LatestNews.scrollPoint) { // 存储鼠标当前滚动条的位置
+            sessionStorage.setItem('scrollPoint', LatestNews.scrollPoint.toString());
         }
     }
 
@@ -73,7 +64,7 @@ class Latest extends Component {
         const scrollHeight = event.target.scrollHeight;
         const scrollTop = event.target.scrollTop;
         const isBottom = (clientHeight + scrollTop === scrollHeight);
-        Latest.scrollPoint = scrollTop;// 全局的
+        LatestNews.scrollPoint = scrollTop;// 全局的
         if (isBottom) {// 到达底部 fetch 前一天数据 并记录scrollHeight（滚动点）
             const date4Fetch = this.state.date4FetchQue[this.state.date4FetchQue.length - 1];
             this.fetchNews('http://112.74.202.2:9999/api/4/news/before/' + date4Fetch, 'before', scrollHeight);
@@ -143,8 +134,23 @@ class Latest extends Component {
         })
     };
 
+    renderSliderItem = (topStories) => {
+        return topStories.map((topStory) => {
+            const bgc = topStory.image;
+            return (
+                <div key={topStory.id}>
+                    <Link to={`/news/${topStory.id}`}>
+                        <div className='car-img' style={{backgroundImage: `url(${bgc})`, backgroundSize: '100% 100%'}}>
+                            <h1 className="car-img-title">{topStory.title}</h1>
+                        </div>
+                    </Link>
+                </div>
+            )
+        })
+    };
+
     render() {
-        const {topStories} = this.state;
+        const {topStories, storiesQue} = this.state;
         const setting = {
             dots: true,
             infinite: true,
@@ -157,26 +163,13 @@ class Latest extends Component {
                 <IndexHeader title={this.state.headerTitle} isIndex={true}/>
                 <div className="carousel">
                     <Carousel {...setting}>
-                        {
-                            topStories.map((topStory) => {
-                                const bgc = topStory.image;
-                                return (
-                                    <div key={topStory.id}>
-                                        <Link to={`/news/${topStory.id}`}>
-                                            <div className='car-img' style={{backgroundImage: `url(${bgc})`, backgroundSize: '100% 100%'}}>
-                                                <h1 className="car-img-title">{topStory.title}</h1>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )
-                            })
-                        }
+                        {this.renderSliderItem(topStories)}
                     </Carousel>
                 </div>
-                {this.state.storiesQue.length ? this.renderList() : 'waiting'}
+                {storiesQue.length ? this.renderList() : 'waiting'}
             </div>
         )
     }
 }
 
-export default Latest;
+export default LatestNews;

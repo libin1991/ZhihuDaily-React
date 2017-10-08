@@ -4,9 +4,22 @@ import Avatar from '../avatar';
 import {NavLink} from 'react-router-dom';
 import './drawer.styl'
 
+const DrawerLi = (props) => {
+    const {toggleDrawer} = props;
+    return props.themes.map((theme) => {
+        return (
+            <p onClick={toggleDrawer} key={theme.id}>
+                <NavLink to={`/topics/${theme.id}`}  activeClassName="selected">
+                    {theme.name}
+                    <Icon type="plus"/>
+                </NavLink>
+            </p>
+        )
+    })
+};
+
 const Drawer = (props) => {
     let {isShow, themes, toggleDrawer} = props;
-    // console.log(isShow);
     return (
         <div className={isShow ? "drawer show" : "drawer"}>
             <div className="drawer-header">
@@ -21,18 +34,7 @@ const Drawer = (props) => {
             </div>
             <div className="drawer-body">
                 <p onClick={toggleDrawer}><NavLink to={`/`}  activeClassName="selected"><Icon type="home"/>首页</NavLink></p>
-                {
-                    themes.map((theme, i) => {
-                        return (
-                            <p onClick={toggleDrawer} key={theme.id}>
-                                <NavLink to={`/topics/${theme.id}`}  activeClassName="selected">
-                                    {theme.name}
-                                    <Icon type="plus"/>
-                                </NavLink>
-                            </p>
-                        )
-                    })
-                }
+                <DrawerLi themes={themes} toggleDrawer={toggleDrawer}/>
             </div>
         </div>
     )

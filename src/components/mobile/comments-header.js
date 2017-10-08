@@ -6,7 +6,7 @@ import './comments-header.styl';
 
 const history = createBrowserHistory();
 
-const CommentHeader = (props) => { // 渲染头部导航（移动端）
+const CommentsHeader = (props) => { // 渲染头部导航（移动端）
     const {length} = props;
     return (
         <header className="comments-header">
@@ -19,4 +19,4 @@ const CommentHeader = (props) => { // 渲染头部导航（移动端）
     )
 };
 
-export default CommentHeader;
+export default CommentsHeader;

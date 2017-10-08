@@ -38,11 +38,12 @@ class NewsDetail extends Component {
 
     render() {
         const id = this.props.match.params.id;
+        const {data} = this.state;
         const {popularity, comments} = this.state.extra;
         return (
             <div className="news-detail">
                 <NewsHeader popularity={popularity} comments={comments} id={id}/>
-                <NewsContent data={this.state.data} mbMode={true}/>
+                {Object.keys(data).length && <NewsContent data={data} mbMode={true}/>}
             </div>
         )
     }

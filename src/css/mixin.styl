@@ -48,13 +48,6 @@ mx_hlh($height, $line-height)
   px2rem('height', $height);
   px2rem('line-height', $line-height);
 
-//绝对定位居中
-mx_posc()
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
 // 绝对定位定义top,left值
 mx_postl($top, $left)
   position: absolute;
@@ -134,32 +127,6 @@ mx_flex_item($num)
   box-flex: $num;
   min-width: 0;
 
-// flex布局容器属性设置
-mx_flex_content()
-  -moz-flex-direction: row;
-  -o-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-direction: row;
-  -moz-flex-wrap: wrap;
-  -o-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  justify-content: space-between;
-
-// flex 水平垂直居中
-mx_flex_mid()
-  display: -webkit-box;
-  display: -moz-box;
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  align-items: center;
-
 // 圆角
 mx_bdrs($radius)
   border-radius: $radius;
@@ -169,11 +136,6 @@ mx_bdrs_r($radius)
 // 边框
 mx_bd($num, $color)
   border: $num solid $color;
-
-// border-box
-mx_brbox()
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 
 // 多行文本显示省略号
 mx_more_ellipsis()
@@ -188,9 +150,4 @@ mx_single_ellipsis()
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-mx_pagepadding()
-  padding: 20px 30px;
-  font-size: 12px;
-  text-align: left;
 
