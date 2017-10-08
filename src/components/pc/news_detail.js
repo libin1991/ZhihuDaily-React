@@ -27,9 +27,10 @@ class NewsDetail extends Component {
 
     render() {
         const id = this.props.match.params.id;
+        const {data} = this.state;
         return (
             <div>
-                <NewsContent data={this.state.data}/>
+                {Object.keys(data).length && <NewsContent data={data}/>}
                 <Comments id={id}/>
                 <BackTop />
             </div>

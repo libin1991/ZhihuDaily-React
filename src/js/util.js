@@ -11,21 +11,31 @@ export const formatDate = (str) => {
 };
 
 export const formatTimeStamp = (timeStamp) => {
-    const time = new Date(timeStamp * 1000);
-    let month = addZero(time.getMonth()),
-        day = addZero(time.getDay()),
-        hours = addZero(time.getHours()),
-        minute = addZero(time.getMinutes()),
-        seconds = addZero(time.getSeconds());
-    return `${month}-${day} ${hours}:${minute}:${seconds}`
+    const date = new Date(timeStamp * 1000);
+    let Y = date.getFullYear(),
+        m = date.getMonth() + 1,
+        d = date.getDate(),
+        H = date.getHours(),
+        i = date.getMinutes(),
+        s = date.getSeconds();
+    if (m < 10) {
+        m = '0' + m;
+    }
+    if (d < 10) {
+        d = '0' + d;
+    }
+    if (H < 10) {
+        H = '0' + H;
+    }
+    if (i < 10) {
+        i = '0' + i;
+    }
+    if (s < 10) {
+        s = '0' + s;
+    }
+    var t = Y + '-' + m + '-' + d + ' ' + H + ':' + i + ':' + s;
+    return t;
 };
-
-export const throttle = function (method, context, event) {
-    clearTimeout(method.tId);
-    method.tId = setTimeout(function () {
-        method.call(context, event);
-    }, 100);
-}
 
 
 function getWeek(date) {
@@ -41,7 +51,4 @@ function getWeek(date) {
     return week;
 }
 
-function addZero(char) {
-    let res = parseInt(char, 10) < 10 ? '0' + char : char;
-    return res;
-}
+
