@@ -3,7 +3,7 @@ import {Icon} from 'antd';
 import Avatar from './avatar';
 import {formatTimeStamp} from "../js/util";
 
-const Comment = (props) => {
+const Comment = (props) => { // 单条评论
     const {comment} = props;
     return (
         <div key={comment.id} className="comment-box">

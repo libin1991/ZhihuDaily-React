@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-import CommentsHeader from './comments-header';
+import React, {Component} from 'react';
 import CommentsContent from '../comments_content';
 import {replaceUrl} from '../../js/util';
 
@@ -13,7 +12,7 @@ class Comments extends Component {
     }
 
     componentDidMount() {
-        const id = this.props.match.params.id;
+        const id = this.props.id;
         fetch(`http://112.74.202.2:9999/api/4/story/${id}/short-comments`) // 获取短评论
             .then((response) => response.json())
             .then((data) => {
@@ -32,16 +31,13 @@ class Comments extends Component {
                 }));
             });
     }
+
     render() {
         const {shortComments, longComments} = this.state;
-        const length = shortComments.length + longComments.length;
         return (
-            <div className="comments">
-                <CommentsHeader length={length}/>
-                <CommentsContent s_comments={shortComments} l_comments={longComments}/>
-            </div>
+            <CommentsContent s_comments={shortComments} l_comments={longComments}/>
         )
     }
-};
+}
 
 export default Comments;

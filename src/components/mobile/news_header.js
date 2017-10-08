@@ -2,7 +2,7 @@ import React from 'react';
 import {Icon} from 'antd';
 import createBrowserHistory from 'history/createBrowserHistory';
 import {Link} from 'react-router-dom';
-import '../../css/news_header.styl';
+import './news_header.styl';
 
 const history = createBrowserHistory();
 

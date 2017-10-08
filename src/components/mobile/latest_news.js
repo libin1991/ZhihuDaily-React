@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Carousel} from 'antd';
 import IndexHeader from './/index_header';
 import {replaceUrl, formatDate} from "../../js/util";
-import '../../css/latest.styl'
+import './latest_news.styl'
 import List from './list';
 
 class Latest extends Component {

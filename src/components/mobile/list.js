@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../../css/list.styl';
+import './list.styl';
 
 const List = (props) => {
     const {stories=[], date=''} = props;

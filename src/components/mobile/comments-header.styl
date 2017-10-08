@@ -1,0 +1,18 @@
+@import '../../css/mixin.styl';
+
+.comments-header
+  mx_poftl(0, 0);
+  z-index: 8888;
+  width: 100%;
+  px2rem('padding-left', 30);
+  px2rem('height', 100);
+  px2rem('font-size', $headerFont);
+  background-color: $huBlue;
+  color: #fff;
+  .length
+    px2rem('margin-left', 15);
+  & > *
+    px2rem('line-height', 100);
+  & > *:last-child
+    f_r();
+    px2rem('margin-right', 50);

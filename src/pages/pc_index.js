@@ -5,7 +5,7 @@ import PCHeader from '../components/pc/header';
 import PCFooter from '../components/pc/footer';
 import Latest from '../components/pc/latest_news';
 import Topics from '../components/pc/topics';
-import NewsDetail from '../components/news_detail';
+import NewsDetail from '../components/pc/news_detail';
 
 import '../css/pc.css'
 class PCIndex extends Component {

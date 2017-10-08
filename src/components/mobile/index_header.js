@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Icon,message} from 'antd';
 import Drawer from './drawer';
-import '../../css/index_header.styl'
+import './index_header.styl'
 
 class IndexHeader extends Component {
     constructor() {
