@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Tabs} from 'antd';
-import 'whatwg-fetch';
 import PCTopicBlock from './topic_block';
 
 const TabPane = Tabs.TabPane;

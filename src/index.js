@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import 'lib-flexible';
+import 'whatwg-fetch';
 import PCIndex from './pages/pc_index';
 import MBIndex from './pages/mb_index';
 
