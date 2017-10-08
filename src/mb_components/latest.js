@@ -22,21 +22,25 @@ class Latest extends Component {
     componentDidMount() {
         const LATEST_URL = 'http://112.74.202.2:9999/api/4/news/latest';
         if (sessionStorage.getItem('mb_latest')) { // 如果本地保存了数据状态 直接从本地获取
-            const topStories = JSON.parse(sessionStorage.getItem(('topStories')));
-            const storiesQue = JSON.parse(sessionStorage.getItem(('storiesQue')));
-            const date4FetchQue = JSON.parse(sessionStorage.getItem(('date4FetchQue')));
-            const formattedDateQue = JSON.parse(sessionStorage.getItem(('formattedDateQue')));
-            const scrollTitles = JSON.parse(sessionStorage.getItem(('scrollTitles')));
-            Latest.scrollPoint = JSON.parse(sessionStorage.getItem(('scrollPoint')));
-            this.setState({
-                topStories,
-                storiesQue,
-                date4FetchQue,
-                formattedDateQue,
-                scrollTitles,
-            },()=>{
+            Latest.scrollPoint = JSON.parse(sessionStorage.getItem('scrollPoint'));
+            // this.setState({
+            //     topStories:JSON.parse(sessionStorage.getItem('topStories')),
+            //     storiesQue:JSON.parse(sessionStorage.getItem('storiesQue')),
+            //     date4FetchQue:JSON.parse(sessionStorage.getItem('date4FetchQue')),
+            //     formattedDateQue:JSON.parse(sessionStorage.getItem('formattedDateQue')),
+            //     scrollTitles:JSON.parse(sessionStorage.getItem('scrollTitles'))
+            // }, () => {
+            //     this.contentNode.scrollTop = Latest.scrollPoint;
+            // }); // 回调 保证数据读取成功再滚动容器 简化如下
+            this.setState((preState) => {
+                const obj = {};
+                for (let k in preState) {
+                    obj[k] = JSON.parse(sessionStorage.getItem(k));
+                }
+                return obj;
+            }, () => {
                 this.contentNode.scrollTop = Latest.scrollPoint;
-            }); // 回调 保证数据读取成功再滚动容器
+            });// 回调 保证数据读取成功再滚动容器
         } else { // 如果本地没有保存状态直接从服务器拉取
             this.fetchNews(LATEST_URL, 'latest');
         }
@@ -54,14 +58,11 @@ class Latest extends Component {
         if (this.contentNode) {
             this.contentNode.removeEventListener('scroll', this.onScrollHandle);
         }
-        const {topStories, storiesQue, date4FetchQue, formattedDateQue, scrollTitles} = this.state;
         sessionStorage.setItem('mb_latest', '1');
-        sessionStorage.setItem('topStories', JSON.stringify(topStories));
-        sessionStorage.setItem('storiesQue', JSON.stringify(storiesQue));
-        sessionStorage.setItem('date4FetchQue', JSON.stringify(date4FetchQue));
-        sessionStorage.setItem('formattedDateQue', JSON.stringify(formattedDateQue));
-        sessionStorage.setItem('scrollTitles', JSON.stringify(scrollTitles));
-        if(Latest.scrollPoint){
+        for (let k in this.state) { // 存储数据，保存状态
+            sessionStorage.setItem(k, JSON.stringify(this.state[k]));
+        }
+        if (Latest.scrollPoint) { // 存储鼠标当前滚动条的位置
             sessionStorage.setItem('scrollPoint', Latest.scrollPoint.toString());
         }
     }
@@ -106,8 +107,8 @@ class Latest extends Component {
             .then((response) => response.json())
             .then((data) => {
                 data = JSON.parse(replaceUrl(JSON.stringify(data))); // 将data里面的图片链接全部处理一次
-                this.setState(() => {
-                    const {storiesQue, date4FetchQue, formattedDateQue} = this.state;
+                this.setState((preState) => {
+                    const {storiesQue, date4FetchQue, formattedDateQue} = preState;
                     const _storiesQue = storiesQue.slice();
                     _storiesQue.push(data.stories);
                     const _date4FetchQue = date4FetchQue.slice();
@@ -157,7 +158,7 @@ class Latest extends Component {
                 <div className="carousel">
                     <Carousel {...setting}>
                         {
-                            topStories.map((topStory, i) => {
+                            topStories.map((topStory) => {
                                 const bgc = topStory.image;
                                 return (
                                     <div key={topStory.id}>
