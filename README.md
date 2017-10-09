@@ -1,18 +1,16 @@
-# 新手向-用react做一个知乎日报
-
 API：[点这里，感谢](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90)
 
-项目地址：[狂戳这里给我star](https://github.com/hackerwen/ZhihuDaily-React)
+项目地址：[Github](https://github.com/hackerwen/ZhihuDaily-React)
 
-预览地址：[狂戳这里去感受](http://112.74.202.2/)
+预览地址：[初次加载有点慢...](http://112.74.202.2/)
 
-![pc主页.png](http://upload-images.jianshu.io/upload_images/4869616-3b51087880a11b46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![pc主页.png](http://upload-images.jianshu.io/upload_images/4869616-fa384335b62c2ea2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![移动端主页.png](http://upload-images.jianshu.io/upload_images/4869616-c2c3936b26b04ee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![移动端主页.png](http://upload-images.jianshu.io/upload_images/4869616-b3d1a55cc163bb0e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-43eee459a22ebfeb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![内容详情.png](http://upload-images.jianshu.io/upload_images/4869616-f28324cf41e6b038?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![评论.png](http://upload-images.jianshu.io/upload_images/4869616-87f61cb4c2c1f22d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![评论.png](http://upload-images.jianshu.io/upload_images/4869616-ff91fbcaadcbab49?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
@@ -20,7 +18,7 @@ API：[点这里，感谢](https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E
 
    * 框架：react
    * 路由：react-router 4.0
-   * HTTP请求：whatwg-fetch
+   * HTTP请求：whatwg-fetch(主要是保证fetch兼容性)
    * 设备判断：react-responsive
    * UI：antd(主要是PC端)
    * CSS预处理：stylus
@@ -50,7 +48,7 @@ app.listen(9999);
 console.log('app started at port 9999...');
 ```
 
-启动了服务后，对自己的本地服务器进行请求即可，只需要将原API的“http://news-at.zhihu.com"”改为“http://localhost:9999”。
+启动了服务后，对自己的本地服务器进行请求即可，只需要将原API的“http://news-at.zhihu.com”改为“http://localhost:9999”。
 #### 2.知乎图片防盗链问题
 
 “知乎的图片可能会通过请求头的referer参数判断，如果不是指定的域名会返回403，如果精通后台的同学，可以去访问这些图片来缓存这些图片，我是搜索到了一个相对简单一些的办法，点击链接，主要用到的是Images.weserv.nl这个网站，可以缓存图片，而且可以修改图片的尺寸大小。
@@ -83,13 +81,13 @@ data中的图片就可以正常引用了。
 
 路由二：/topic/efg
 
-即路由一跳转至路由二组件没有刷新重新去获取数据，其实这个问题在vue-router里面也有，通过watch监测路由参数变化判断组件是否需要刷新。
+即路由一跳转至路由二组件没有重新去获取数据，其实这个问题在vue-router里面也有，vue中是通过watch监测路由参数变化判断组件是否需要刷新。
 
-解决方案：我们一般是在componentDidMount中获取数据，当我从路由一跳转至路由二，仍然为同一组件，所以并没有重新渲染。
+解决方案：我们一般是在componentDidMount中获取数据，当我从路由一跳转至路由二，仍然为同一组件，所以并没有重新Mount。
 
 也就是说，同级路由相同组件跳转的情况下，componentDidMount方法仅仅在第一次Mount的时候触发了，路由跳转并没有触发该方法。
 
-但是路由跳转之后 props.params 变了, 我们可以在componentWillReceiveProps中进行第二次的数据拉取所以会触发更新过程。
+但是路由跳转之后 props.params 变了, 我们可以在componentWillReceiveProps中进行第二次的数据拉取，于是会触发更新过程。
 
 > 参考：
 >* [React Router为何在url相同参数不同的情况下跳转但是并不刷新页面？](https://segmentfault.com/q/1010000009309279)
@@ -102,7 +100,6 @@ data中的图片就可以正常引用了。
 2. 把下拉加载更改为翻页，假设不是通过改变URL，只是单纯的ajax请求，击列表项到详细页，当点击返回按钮时，返回离开时的那一页。
 
 其实我之前也写过篇文章，[戳这里](http://www.jianshu.com/p/869e5c2e45cb)
-
 
 某一天我很无聊，正在刷知乎日报，我要完成一个目标：从2017-10-07号一直看到2017-01-01。
 
@@ -123,25 +120,26 @@ data中的图片就可以正常引用了。
  方式二：
      
 1. 在componentWillUnMount方法中存储当前已经加载的数据到本地(sessionStorage,localStorage)
-2. 详情回退后,从本地取出数据，进行渲染(所以componentDid内部要判断本地是否已经存在数据，如果存在则return，不存在从服务器获取数据)
+2. 详情回退后,从本地取出数据，进行渲染(所以componentDidMount内部要判断本地是否已经存在数据，如果存在则return，不存在从服务器获取数据)
 3. 这种方式回退时不需要再次进行http请求，也能满足下拉的情况，我选择的就是这种方式。
 
 > 参考：
 >* [react-router-dom 怎么让第二个页面返回到第一个页面使得第一个页面不重新加载](https://www.v2ex.com/amp/t/386516)
 >* [React 和react-router ,实现回退的时候，如何使页面回退到以前的状态](http://react-china.org/t/react-react-router/3757/2)
+
 #### 3.后退时记录滚动条位置
 案情描述：同上
 
 恢复数据还不够，只是省下了我加载的时间，而我还是要拉到最底部，所以滚动条的位置也需要恢复。
 
-思路同上，将当前的scrollTop记录在一个全局变量中(我是作为Latest组件的属性，为了让需要滚动的组件获取到)，在componentWillUnMount方法中存储当前的滚动条位置(sessionStorage,localStorage)。
+思路同上，将当前的scrollTop记录在一个全局变量中(我是作为LatestNews组件的属性，为了让需要滚动的组件获取到)，在componentWillUnMount方法中存储当前的滚动条位置(sessionStorage,localStorage)。
 
-当后退返回时取出位置赋值给Latest.scrollPoint，确认数据更新后(一定要确认数据更新后，setState方法是异步方法)，在setState的回调中根据Latest.scrollPoint滚动需要滚动的组件。
+当后退返回时取出位置赋值给LatestNews.scrollPoint，确认数据更新后(一定要确认数据更新后，setState方法是异步方法)，在setState的回调中根据Latest.scrollPoint滚动需要滚动的组件。
 
 >参考
 > * [react判断滚动到底部以及保持原来的滚动位置](http://blog.csdn.net/tujiaw/article/details/77511460)
 
-#### 4. 当state的属性为数组，如果setState比较好
+#### 4. 当state的属性为数组，如何setState比较好
 这个主要是push,unshift方法的返回值造成state没有赋值成功，最好先用slice把数组copy以下，用copy的数组去push(data)，然后再去setState.
 
 ```js
@@ -153,12 +151,17 @@ this.setState({
 ```
 > 这里有一篇文章写的很好
 > * [深入理解React 组件状态（State）](http://www.jianshu.com/p/c6257cbef1b1)
+
 ### 移动端适配问题
+
 #### 1.react-responsive
+
 ```bash
 npm install  react-responsive --save
 ```
+
 然后在index.js中
+
 ```js
 import MediaQuery from 'react-responsive';
 
@@ -176,28 +179,38 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 ```
+
 在设置了query参数后，就可以根据设备的宽度来决定渲染PC组件还是移动端组件，独立开发即可，当然，要考虑组件的复用。
+
 #### 2.flexible.js+rem布局
+
 关于flexible.js+rem布局有疑问的可以看下面的文章
+
 >参考：
 >* [移动端高清、多屏适配方案](http://div.io/topic/1092)
 >* [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
 
 使用lib-flexible.js
-首先
+
+首先:
+
 ```bash
 npm install lib-flexible --save
 ```
+
 然后在index.js中，即可使用rem进行适配了。
+
 ```bash
 import 'lib-flexible';
 ```
+
 将px转为rem的几种方法
 1. 可以通过开发工具的插件，例如sublime上面就有插件
 2. webpack的px2rem-loader，对stylus文件无效
 3. 使用定义好的预处理器(stylus,sass,less)的方法
 
 以下是stylus的示例
+
 ```stylus
 //定义一个变量和一个mixin
 $baseFontSize = 16; //默认基准font-size
@@ -215,6 +228,7 @@ px2rem(name, px){
   height: 3.2rem;
 }
 ```
+
 >参考：
 >* [三种预处理器px2rem](http://www.cnblogs.com/shahramLu/p/6408551.html)
 
@@ -223,13 +237,13 @@ px2rem(name, px){
 
 Drawer组件，如下图所示:
 
-![Drawer.gif](http://upload-images.jianshu.io/upload_images/4869616-0fa4a593ef497291.gif?imageMogr2/auto-orient/strip)
+![Drawer.gif](http://upload-images.jianshu.io/upload_images/4869616-32fec349e60cd197?imageMogr2/auto-orient/strip)
 
-设计思路是：Drawer组件先通过绝对定位移出视窗外，当点击menu按钮时，添加class，改变left以及top的值,当然得有transition营造动画效果(还可以通过transform:translateZ(0)硬件加速哦)，同时渲染遮罩层mask，宽高均为100%.
+设计思路是：Drawer组件先通过绝对定位移出视窗外，当点击menu按钮时，添加class，改变left以及top的值,当然得有transition营造动画效果(还可以通过transform:translateZ(0)硬件加速)，同时渲染遮罩层mask，宽高均为100%.
 
 z-index层级：Drawer>mask>index
 
-案件描述：当我不小心滑动到遮罩层mask的时候，底部list也在滑动，这显然不是我想要的，这里主要是看了张鑫旭的文章。我就不细说了。
+案件描述：当我不小心滑动到遮罩层mask的时候，底部list也在滑动，这显然不是我想要的，这里主要是看了张鑫旭大佬的文章。我就不细说了。
 
 >参考
 >* [web移动端浮层滚动阻止window窗体滚动JS/CSS处理](http://www.zhangxinxu.com/wordpress/2016/12/web-mobile-scroll-prevent-window-js-css/)                         
@@ -248,13 +262,15 @@ PC端内容详情页news_detail这一模块中包含评论comments模块，而�
 ### 关于打包(未解决)
 记得要将开发时对webpack.config.dev.js做的操作也要对webpack.config.prod.js操作一遍。
 
-比如我开发时引入了stylus，自己也配置了webpack.config.dev.js的环境[stylus, stylus-loader ],在开发环境下没有问题。
+比如我开发时引入了stylus，自己也配置了webpack.config.dev.js的环境[stylus, stylus-loader ]，在开发环境下没有问题。
 
 但是打包之后stylus文件全部失效，一看好好的躺在static/media文件夹呢，说明生产环境的webpack没有配置好。再对webpack.config.prod.js里面的loaders也添加一遍就好了，其它同理。
 然后：
+
 ```bash
 npm run build 
 ```
+
 如何在github-page上展示呢？
 
 [戳这里](https://segmentfault.com/a/1190000008425992)，虽然说的是vue项目，但是build后操作一模一样，除了将命令中dist=>build
@@ -262,6 +278,7 @@ npm run build
 上传后会发现只有在github根路径才能正常访问，而不是仓库下面的路径，很坑啊。。。不是很懂这个原因啊，恳请高手替我解答一下，资源路径没问题，就是路由匹配不正确。
 
 理想情况下应该是这个路径可以直接访问
+
 ```js
 https://nickname.github.io/project/[index.html]
 ```
@@ -274,16 +291,19 @@ https://nickname.github.io/topics
 
 我看别人都是打包后资源加载问题，我发现直接打包资源路径没有问题，难道我开发时要把path由'/a'改为'/project/a'???
 
+如果有成功在gh-pages上展示项目的同学，请务必在评论中留下您的解决方案，真的非常感谢！
 > 参考
 > * [stackoverflow](https://segmentfault.com/q/1010000009672497)
 > * [如何在gh-pages上展示vue项目](https://segmentfault.com/a/1190000008425992)
 
 后续操作：完善细节，自己写折叠面板。
 
-##后话
+## 后话
 如果我的文章给您了一点帮助，希望可以去github上给我一颗star。
 
 能够在国庆短短几天从不知道react是啥到做个小东西出来，一直都是因为有这么多热爱分享的人，站在巨人的肩膀上！
+
+但是仍然有很多不足，请指正。
 
 项目地址：[狂戳这里](https://github.com/hackerwen/ZhihuDaily-React)
 ⭐⭐⭐
