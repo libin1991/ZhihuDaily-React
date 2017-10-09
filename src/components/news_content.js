@@ -4,7 +4,7 @@ import Avatar from './avatar';
 import '../css/news_content.styl'
 
 const NewsContent = (props) => {
-    const {body, css, theme, recommenders, image, title} = props.data;
+    const {body, css, theme, recommenders=[], image, title} = props.data;
     const {mbMode = false} = props;
     return (
         <div className="news-content">
@@ -31,7 +31,7 @@ const Image = (props) => {// 如果是移动端就渲染题图 PC端则不渲染
 
 const Recommenders = (props) => { // 如果是theme下的文章，则隐藏img，渲染推荐者
     const {recs} = props;
-    if (recs.length === 0) return;
+    if (recs.length === 0) return '';
     return (
         <div className="recs">
             <span className="title">推荐者</span>
