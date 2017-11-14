@@ -1,11 +1,17 @@
 import React from 'react';
-import {Icon} from 'antd';
+import {
+    Icon
+} from 'antd';
 import Avatar from '../avatar';
-import {NavLink} from 'react-router-dom';
+import {
+    NavLink
+} from 'react-router-dom';
 import './drawer.styl'
 
 const DrawerLi = (props) => {
-    const {toggleDrawer} = props;
+    const {
+        toggleDrawer
+    } = props;
     return props.themes.map((theme) => {
         return (
             <p onClick={toggleDrawer} key={theme.id}>
@@ -19,7 +25,11 @@ const DrawerLi = (props) => {
 };
 
 const Drawer = (props) => {
-    let {isShow, themes, toggleDrawer} = props;
+    let {
+        isShow,
+        themes,
+        toggleDrawer
+    } = props;
     return (
         <div className={isShow ? "drawer show" : "drawer"}>
             <div className="drawer-header">
@@ -33,7 +43,7 @@ const Drawer = (props) => {
                 </div>
             </div>
             <div className="drawer-body">
-                <p onClick={toggleDrawer}><NavLink to={`/`}  activeClassName="selected"><Icon type="home"/>首页</NavLink></p>
+                <p onClick={toggleDrawer}><NavLink exact to={`/`}  activeClassName="selected"><Icon type="home"/>首页</NavLink></p>
                 <DrawerLi themes={themes} toggleDrawer={toggleDrawer}/>
             </div>
         </div>
@@ -41,4 +51,3 @@ const Drawer = (props) => {
 };
 
 export default Drawer;
-
